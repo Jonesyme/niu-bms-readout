@@ -61,10 +61,10 @@ class BMSReader:
 
         self._log.debug(response)
         data = struct.unpack(">HHBBBBBBBBBBHB", response)
-        pack_voltage = float(data[0] - 0x3333) / 10
-        current = float(data[1] - 0x3333) / 10
+        pack_voltage = (data[0] - 0x3333) / 10
+        current = (data[1] - 0x3333) / 10
         soc = data[4] - 0x33
-        time_remain = float(data[6] - 0x33) / 10
+        time_remain = (data[6] - 0x33) / 10
         temp1 = data[7] - 0x33
         temp2 = data[8] - 0x33
         temp3 = data[9] - 0x33
@@ -94,26 +94,26 @@ class BMSReader:
 
         self._log.debug(response)
         data = struct.unpack(">HHHHHHHHHHHHHHHHHHHHBB", response)
-        cell1_u = float(data[0] - 0x3333) / 1000
-        cell2_u = float(data[1] - 0x3333) / 1000
-        cell3_u = float(data[2] - 0x3333) / 1000
-        cell4_u = float(data[3] - 0x3333) / 1000
-        cell5_u = float(data[4] - 0x3333) / 1000
-        cell6_u = float(data[5] - 0x3333) / 1000
-        cell7_u = float(data[6] - 0x3333) / 1000
-        cell8_u = float(data[7] - 0x3333) / 1000
-        cell9_u = float(data[8] - 0x3333) / 1000
-        cell10_u = float(data[9] - 0x3333) / 1000
-        cell11_u = float(data[10] - 0x3333) / 1000
-        cell12_u = float(data[11] - 0x3333) / 1000
-        cell13_u = float(data[12] - 0x3333) / 1000
-        cell14_u = float(data[13] - 0x3333) / 1000
-        cell15_u = float(data[14] - 0x3333) / 1000
-        cell16_u = float(data[15] - 0x3333) / 1000
-        cell17_u = float(data[16] - 0x3333) / 1000
-        cell18_u = float(data[17] - 0x3333) / 1000
-        cell19_u = float(data[18] - 0x3333) / 1000
-        cell20_u = float(data[19] - 0x3333) / 1000
+        cell1_u = (data[0] - 0x3333) / 1000
+        cell2_u = (data[1] - 0x3333) / 1000
+        cell3_u = (data[2] - 0x3333) / 1000
+        cell4_u = (data[3] - 0x3333) / 1000
+        cell5_u = (data[4] - 0x3333) / 1000
+        cell6_u = (data[5] - 0x3333) / 1000
+        cell7_u = (data[6] - 0x3333) / 1000
+        cell8_u = (data[7] - 0x3333) / 1000
+        cell9_u = (data[8] - 0x3333) / 1000
+        cell10_u = (data[9] - 0x3333) / 1000
+        cell11_u = (data[10] - 0x3333) / 1000
+        cell12_u = (data[11] - 0x3333) / 1000
+        cell13_u = (data[12] - 0x3333) / 1000
+        cell14_u = (data[13] - 0x3333) / 1000
+        cell15_u = (data[14] - 0x3333) / 1000
+        cell16_u = (data[15] - 0x3333) / 1000
+        cell17_u = (data[16] - 0x3333) / 1000
+        cell18_u = (data[17] - 0x3333) / 1000
+        cell19_u = (data[18] - 0x3333) / 1000
+        cell20_u = (data[19] - 0x3333) / 1000
         print(f"Cell 1 voltage:\t{cell1_u}")
         print(f"Cell 2 voltage:\t{cell2_u}")
         print(f"Cell 3 voltage:\t{cell3_u}")
