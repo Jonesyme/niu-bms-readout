@@ -205,6 +205,7 @@ class BMSReader:
 
     def _send_cmd(self, cmd_data: str):
         # Start of frame + preamble
+        # Last 0x02 is probably len of command - 1
         data = b"\xfe\xfe\xfe\xfe" + b"\x68\x31\xce\x68\x02\x02"
 
         data = data + cmd_data
