@@ -2,9 +2,9 @@
 ---
 ### Works with 48V and 60V Niu Batteries associated with N1S and other Niu bikes
   A simple python script to read data from a NIU BMS battery pack. <br />
-  Provides equivelent BMS diagnostic functionality the official Niu H1 diagnostic tool.
+  Provides equivelent BMS diagnostic functionality as the official H1 diagnostic tool from Niu.
 
-### Communication protocol: 
+### Communication Protocol: 
 * RS-485 @ 9600 8E1
 
 ### Hardware Requirements:
@@ -20,20 +20,22 @@
      +-----------|
      ```
   3. Find device name associated with your RS-485 adapter<br />
+
      > Linux users can run the following, then plug RS-485 adapter into PC and see new device name appear:
      >```
      >dmesg | grep tty
      >sudo udevadm monitor -u
      >```
+     
      - For Windows `[DEVICE-NAME]` will likely be similar to the form `COM0`
      - For Linux `[DEVICE-NAME]` will likely be in the form of `/dev/TTYUSB0`    
 
-  4. Run python script:
+  5. Run python script
      ```
      python3 bms_read.py -d [DEVICE-NAME]
      ```
 
-### Example readout from script:
+### Example Script Output
 ```
 Pack voltage:	69.4
 Current:	0.0
