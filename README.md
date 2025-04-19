@@ -1,16 +1,24 @@
-# Niu 48V/31Ah BMS Readout Tool
+# Niu Battery BMS Diagnostic Reader 
+### Works with both 48V/60V Niu Batteries for N1S and other bikes
 
-A simple script to read data from the BMS in a Niu 48V/31Ah battery pack. This should provide the same functionality as the Niu H1 tool used for battery (and other) diagnostics.
+A simple python script to read data from a NIU BMS battery pack. This provides the same BMS functionality as the Niu H1 diagnostic tool (at least as far as its BMS feature, not others).
 
-Inspired by embedded code found in [this forum thread](https://www.elektroroller-forum.de/viewtopic.php?t=8776&sid=4988eacad78e7169833be290458c63f0). Protocol implemented there isn't fully compatible with the protocol used by my battery BMS, thus some deviations.
+### Communication protocol: 
+  `RS-485 @ 9600 8E1`
+### Hardware Requirements:
+* Tested using a cheap USB<->RS485 dongle available for $15: [from Amazon](https://www.amazon.com/Industrial-USB-RS485-Converter-Communication/dp/B081MB6PN2)
 
-Communication is RS-485 @ 9600 8E1, I use it with a Digitus USB<->RS485 converter.
-
-Connect RS-485 to A+ and B-, battery port as seen on battery (female connector).
-
+### Instructions:
+* Connect RS-485 dongle's A+ and B- connections to battery port as shown below (female connector).
 ```
 +-----------+
 | A+ B- Gnd |
 |   +   -   |
 +-----------+
 ```
+* Then run python script using following command:
+    ```bms_read.py -d [USB-DEVICE-NAME]```
+
+  On Windows the `[USB-DEVICE-NAME]` will likely be `COM0` on Linux it will likely be `/dev/TTYUSB0`.  For more help google how to find USB device name.
+
+### Example readout from script:
